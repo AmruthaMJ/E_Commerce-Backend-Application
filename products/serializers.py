@@ -3,13 +3,13 @@ from products.models import *
 
 class CategorySerailaizer(serializers.ModelSerializer):
     class Meta:
-        model='Category'
+        model=Category
         fields='__all__'
 
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
-        model='Product'
+        model=Product
         fields='__all__'
 
         
