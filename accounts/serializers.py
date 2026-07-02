@@ -8,9 +8,10 @@ class AccountSerializers(serializers.ModelSerializer):
         model=User
         fields=['id','username','email','password','phone','address']
 
-        extra_kwargs={'password':{'write_only':True}}
+        extra_kwargs={
+            'password':{'write_only':True}
+        }
 
-        def create(self,validated_data):
-            return User.objects.create_user(**validated_data)
+    def create(self,validated_data):
+        return User.objects.create_user(**validated_data)
 
-        
